@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:18 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 12:30:41 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/17 18:24:32 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,11 @@ int			ft_check_all(char *str)
 	int		i;
 
 	i = 0;
+	if (str[ft_strlen(str) - 2] != '#' && str[ft_strlen(str) - 2] != '.')
+	{
+		write(1, "back de trop", 12);
+		exit(EXIT_FAILURE);
+	}
 	if (ft_check_sharpoints(str) == FALSE)
 		return (FALSE);
 	if (ft_check_nl(str) == FALSE)
@@ -99,7 +104,7 @@ int			ft_check_all(char *str)
 	}
 	return (TRUE);
 }
-
+/*
 int		main(int ac, char **av)
 {
 	if (ac != 2)
@@ -146,3 +151,4 @@ int		main(int ac, char **av)
 	//}
 	return (0);
 }
+*/

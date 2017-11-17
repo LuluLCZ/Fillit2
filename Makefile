@@ -6,7 +6,7 @@
 #    By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 11:29:27 by llacaze           #+#    #+#              #
-#    Updated: 2017/11/17 16:25:08 by llacaze          ###   ########.fr        #
+#    Updated: 2017/11/17 18:02:38 by llacaze          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,10 @@ SRC = ft_buf_to_tab.c		\
 	  Libft/ft_strnew.c		\
 	  Libft/ft_strlen.c		\
 	  Libft/ft_strsplit.c	\
-	  ft_check_tetri.c
+	  ft_check_tetri.c		\
+	  ft_main.c				\
+	  Libft/ft_memalloc.c	\
+	  Libft/ft_strcmp.c
 
 OBJ=$(SRC:.c=.o)
 

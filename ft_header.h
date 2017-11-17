@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:34 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 16:17:35 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/17 18:53:28 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,15 @@
 # define NL(a) (a == '\n')
 # define SHPTNL(a) (a == '#' || a == '.' || a == '\n')
 
+typedef struct          s_point
+{
+    int         x;
+    int         y;
+}                       t_point;
+
 typedef struct          s_tetri
 {
-    t_list      point[4];
+    t_point      point[4];
 }                       t_tetri;
 
 typedef struct          s_pattern
@@ -64,9 +70,13 @@ int			ft_valid_tetri_check(char **tab, int nb_tetri);
 int			ft_check_sharpoints(char *str);
 int			ft_check_nl(char *str);
 int			ft_check_all(char *str);
-int		    ft_check_line(char *line)
-int		    ft_check_column(char **map)
-void	    ft_move_up(char **map)
-void	    ft_move_left(char **map)
+int		    ft_check_line(char *line);
+int		    ft_check_column(char **map);
+void	    ft_move_up(char **map);
+void	    ft_move_left(char **map);
+void        ft_check_tetri(char *new_str, int c, int *this_tetri);
+char        *ft_tab_to_blocks(char **map);
+int         *ft_tetriminos(char **map, int nb_tetri);
+extern const t_pattern g_pattern[19];
 
 #endif

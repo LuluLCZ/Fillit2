@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 10:41:51 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 16:14:14 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/17 18:23:25 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_check_line(char *line)
 	int		count;
 
 	count = 1;
-	while (count < 4)
+	while (*line)
 	{
 		if (*line++ != '.')
 			count = 0;
@@ -51,7 +51,7 @@ void	ft_move_up(char **map)
 	while (line_pos < 3)
 	{
 		map[line_pos] = map[line_pos + 1];
-		line_pos++;	
+		line_pos++;
 	}
 	map[line_pos] = tmp;
 }
