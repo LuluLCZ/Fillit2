@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:45:06 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 16:24:19 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/17 16:54:49 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	**ft_split(char *str)
 	char	**new_ret;
 
 	new_ret = ft_strsplit(str, \n);
+	return (new_ret);
 }
 
 int		main(int ac, char **av)
