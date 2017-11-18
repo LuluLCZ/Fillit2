@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:34 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 18:53:28 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/18 14:50:04 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,21 @@ typedef struct          s_tetri
     t_point      point[4];
 }                       t_tetri;
 
+typedef struct			s_coord
+{
+	t_tetri		coordonnees;
+}						t_coord;
+
+typedef struct			s_map
+{
+	int			map_need;
+	int			abcisse_need;
+	int			ordo_need;
+}						t_map;
+
 typedef struct          s_pattern
 {
     char        *pattern;
-    int         min_map_size;
-    int         width;
-    int         height;
-    t_tetri     coord;
 }                       t_pattern;
 
 char		*ft_buf_to_str(int fd);
@@ -77,6 +85,16 @@ void	    ft_move_left(char **map);
 void        ft_check_tetri(char *new_str, int c, int *this_tetri);
 char        *ft_tab_to_blocks(char **map);
 int         *ft_tetriminos(char **map, int nb_tetri);
-extern const t_pattern g_pattern[19];
+int			ft_size_map(int nb_tetri, int *tetrimino);
+char		**ft_generate_map(int size);
+void		ft_usage(void);
+void		ft_error(void);
+void		ft_place(char **map, t_point pt[4], int tetri_nb);
+int			ft_check_available(char **map, t_point pt[4], int r, int o);
+char		**ft_test(char **map, int *tetrimino, int nb_tetri);
+
+t_coord l_coord[19];
+t_map l_map[19];
+t_pattern l_pattern[19];
 
 #endif

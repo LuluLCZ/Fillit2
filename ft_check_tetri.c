@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:17:38 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 18:55:06 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/18 12:57:33 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_check_tetri(char *new_str, int c, int *this_tetri)
 	i = 0;
 	while (i < 19)
 	{
-		if (ft_strcmp(g_pattern[i].pattern, new_str) == 0)
+		if (ft_strcmp(l_pattern[i].pattern, new_str) == 0)
 		{
 			this_tetri[c] = i;
 			break;
@@ -43,10 +43,7 @@ void	ft_check_tetri(char *new_str, int c, int *this_tetri)
 		i++;
 	}
 	if (i == 19)
-	{
-		write(1, "3", 1);
-		exit(EXIT_FAILURE);
-	}
+		ft_error();
 }
 
 int		*ft_tetriminos(char **map, int nb_tetri)

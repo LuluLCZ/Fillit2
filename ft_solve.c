@@ -3,60 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ft_solve.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
+/*   By: llacaze <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 18:41:43 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 20:36:22 by llacaze          ###   ########.fr       */
+/*   Created: 2017/11/18 11:09:03 by llacaze           #+#    #+#             */
+/*   Updated: 2017/11/18 14:55:43 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	**ft_generate_map(int size)
-{
-	char	**new_map;
-	int		x;
-	int		y;
-
-	y = 0;
-	if (!(new_map = (char **)malloc(sizeof(char *) * 576000)))
-		return (NULL);
-	while (y < size)
-	{
-		if(!(new_map[y] = (char *)malloc(sizeof(char) * size + 1)))
-			return (NULL);
-		x = 0;
-		while (x < size)
-		{
-			
-			new_map[y][x] = '.';
-			x++;
-		}
-		new_map[y][x] = '\0';
-		y++;
-	}
-	new_map[y] = NULL;
-	return (new_map);
-}
-
-/*char	**ft_place(char **map)
-{
-	
-}*/
-
-int		main(int ac, char **av)
+int		ft_check_available(char **map, t_point pt[4], int r, int o)
 {
 	int		i;
-	char	**ret;
-	int	index;
+	int		available;
 
-	index = 0;
-	i = 10;
-	ret = ft_generate_map(i);
-	while (ret[index])
+	available = 0;
+	i = 0;
+	while (i < 4)
 	{
-		printf("%s\n", ret[index]);
-		index++;
+		//write(1, "ntm\n", 4);
+		if (map[pt[i].y + r][pt[i].x + o] == '.')
+		{
+			write(1, "pas ntm\n", 8);
+			i++;
+			//n++;
+		}
 	}
+	if (i == 4)
+		return (i);
 	return (0);
+}
+
+/*char	**ft_solve(char **map, int *tetrimino, int map_size)
+{
+	int		i;
+	int		r;
+	int		o;
+
+	i = 0;
+	r = -1;
+	o = -1;
+	while (r++ < map_size)
+	{
+		while (o++ < map_size)
+		{
+			if (ft_check_available(map, l_coord[tetrimino[0]].coordonnees.point, r, o) == 4)
+			{
+				ft_place(map, tetrimino, l_coord[tetrimino[0]].coordonnees.point);
+			}
+		}
+	}
+	return (map);
+}*/
+
+char	**ft_test(char **map, int *tetrimino, int nb_tetri)
+{
+	//int		i;
+	int		k;
+
+	k = 0;
+	while (k < nb_tetri)
+	{
+		ft_place(map, l_coord[tetrimino[0]].coordonnees.point, k);
+		tetrimino++;
+		k++;
+	}
+	return (map);
 }
