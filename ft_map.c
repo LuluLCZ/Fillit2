@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 18:41:43 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 14:51:24 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/18 19:57:26 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ char	**ft_generate_map(int size)
 	int		y;
 
 	y = 0;
-	if (!(new_map = (char **)malloc(sizeof(char *) * size + 2)))
+	if (!(new_map = (char **)malloc(sizeof(char *) * size + 1000)))
 		return (NULL);
 	while (y < size)
 	{
+		//write(1, "o", 1);
 		if(!(new_map[y] = (char *)malloc(sizeof(char) * size + 1000)))
 			return (NULL);
 		x = 0;
@@ -57,22 +58,34 @@ char	**ft_generate_map(int size)
 		new_map[y][x] = '\0';
 		y++;
 	}
-	//new_map[y] = NULL;
+	new_map[y] = NULL;
 	return (new_map);
 }
 
-void		ft_place(char **map, t_point pt[4], int tetri_nb)
+void		ft_place(char **map, t_point pt[4], int tetri_nb, t_point ok)
 {
 	int		k;
 
 	k = 0;
 	while (k < 4)
 	{
-		map[pt[k].x][pt[k].y] = 65 + tetri_nb;
+		//write(1, "p", 1);
+		map[ok.y + pt[k].y][ok.x + pt[k].x] = 65 + tetri_nb;
 		k++;
 	}
 }
 
+void		ft_delete(char **map, t_point pt[4], t_point ok)
+{
+	int		k;
+	
+	k = 0;
+	while (k < 4)
+	{
+		map[ok.y + pt[k].y][ok.x + pt[k].x] = '.';
+		k++;
+	}
+}
 /*char	**ft_place(char **map)
 {
 	

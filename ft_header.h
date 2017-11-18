@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:34 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 14:50:04 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/18 19:54:20 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@
 
 typedef struct          s_point
 {
-    int         x;
     int         y;
+    int         x;
 }                       t_point;
 
 typedef struct          s_tetri
@@ -89,9 +89,11 @@ int			ft_size_map(int nb_tetri, int *tetrimino);
 char		**ft_generate_map(int size);
 void		ft_usage(void);
 void		ft_error(void);
-void		ft_place(char **map, t_point pt[4], int tetri_nb);
+void		ft_place(char **map, t_point pt[4], int tetri_nb, t_point ok);
 int			ft_check_available(char **map, t_point pt[4], int r, int o);
-char		**ft_test(char **map, int *tetrimino, int nb_tetri);
+char		**ft_test(char **map, int *tetrimino, int nb_tetri, int size_map);
+int			ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb, int nb_tetri);
+void		ft_delete(char **map, t_point pt[4], t_point ok);
 
 t_coord l_coord[19];
 t_map l_map[19];

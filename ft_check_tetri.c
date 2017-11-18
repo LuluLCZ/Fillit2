@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:17:38 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 12:57:33 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/18 19:14:33 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		*ft_tetriminos(char **map, int nb_tetri)
 	char	*conv_map;
 	
 	c = 0;
-	if (!(this_tetri = (int *)malloc(sizeof(int) * nb_tetri + 1)))
+	if (!(this_tetri = (int *)malloc(sizeof(int) * (576 * 2))))
 		return (NULL);
 	while (c < nb_tetri)
 	{

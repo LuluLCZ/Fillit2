@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:45:06 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 14:51:06 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/18 19:56:01 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,16 @@ int		main(int ac, char **av)
 	if (!(i == 1))
 		ft_error();
 	ret = ft_split(str);
+	free(str);
+	//write(1, "h", 1);
+	close (fd);
+	//write(1, "o", 1);
 	tetrimino = ft_tetriminos(ret, nb_tetri);
+	//write(1, "0", 1);
 	ret = ft_generate_map(ft_size_map(nb_tetri, tetrimino));
+	//write(1, "_", 1);
 	//ft_place(ret, tetrimino);
-	ret = ft_test(ret, tetrimino, nb_tetri);
+	ret = ft_test(ret, tetrimino, nb_tetri, ft_size_map(nb_tetri, tetrimino));
 	//printf("%d", *index);
 	//i = ft_tab_check_tetri(ret);
 	i = 0;
@@ -77,5 +83,7 @@ int		main(int ac, char **av)
 		//printf("%s\n", new_ret[index]);
 		i++;
 	}
+	close (fd);
+	free(ret);
 	return (0);
 }
