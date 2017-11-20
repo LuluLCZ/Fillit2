@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:34 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 19:54:20 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 12:52:09 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@
 
 typedef struct          s_point
 {
-    int         y;
-    int         x;
+	int         y;
+	int         x;
 }                       t_point;
 
 typedef struct          s_tetri
 {
-    t_point      point[4];
+	t_point      point[4];
 }                       t_tetri;
 
 typedef struct			s_coord
@@ -66,7 +66,7 @@ typedef struct			s_map
 
 typedef struct          s_pattern
 {
-    char        *pattern;
+	char        *pattern;
 }                       t_pattern;
 
 char		*ft_buf_to_str(int fd);
@@ -91,9 +91,10 @@ void		ft_usage(void);
 void		ft_error(void);
 void		ft_place(char **map, t_point pt[4], int tetri_nb, t_point ok);
 int			ft_check_available(char **map, t_point pt[4], int r, int o);
-char		**ft_test(char **map, int *tetrimino, int nb_tetri, int size_map);
+char		**ft_test(int *tetrimino, int nb_tetri, int map_size);
 int			ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb, int nb_tetri);
 void		ft_delete(char **map, t_point pt[4], t_point ok);
+char		**ft_solve_end(int *tetrimino, int nb_tetri);
 
 t_coord l_coord[19];
 t_map l_map[19];

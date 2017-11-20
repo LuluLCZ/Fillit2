@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:45:06 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 19:56:01 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 13:23:02 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,7 @@
 //static char		*ft_buf_to_str(int fd);
 //static char		**ft_str_to_tab(char *str);
 
-t_pattern	l_pattern[19] = {
-	{"###..#.........."},
-	{"#...##..#......."},
-	{".#..##...#......"},
-	{".#..###........."},
-	{"##..#...#......."},
-	{"##...#...#......"},
-	{"#...#...##......"},
-	{".#...#..##......"},
-	{"..#.###........."},
-	{"###...#........."},
-	{"#...###........."},
-	{"###.#..........."},
-	{".##.##.........."},
-	{"#...##...#......"},
-	{"##...##........."},
-	{".#..##..#......."},
-	{"##..##.........."},
-	{"#...#...#...#..."},
-	{"####............"}
-};
+
 
 char	**ft_split(char *str)
 {
@@ -69,11 +49,12 @@ int		main(int ac, char **av)
 	close (fd);
 	//write(1, "o", 1);
 	tetrimino = ft_tetriminos(ret, nb_tetri);
+	free(ret);
 	//write(1, "0", 1);
-	ret = ft_generate_map(ft_size_map(nb_tetri, tetrimino));
+	//ret = ft_generate_map(ft_size_map(nb_tetri, tetrimino));
 	//write(1, "_", 1);
 	//ft_place(ret, tetrimino);
-	ret = ft_test(ret, tetrimino, nb_tetri, ft_size_map(nb_tetri, tetrimino));
+	ret = ft_solve_end(tetrimino, nb_tetri);
 	//printf("%d", *index);
 	//i = ft_tab_check_tetri(ret);
 	i = 0;

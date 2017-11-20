@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 18:41:43 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 19:57:26 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 13:32:04 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,11 @@ char	**ft_generate_map(int size)
 	int		y;
 
 	y = 0;
-	if (!(new_map = (char **)malloc(sizeof(char *) * size + 1000)))
+	if (!(new_map = (char **)malloc(sizeof(char *) * size + 1)))
 		return (NULL);
 	while (y < size)
 	{
-		//write(1, "o", 1);
-		if(!(new_map[y] = (char *)malloc(sizeof(char) * size + 1000)))
+		if(!(new_map[y] = (char *)malloc(sizeof(char) * size + 1)))
 			return (NULL);
 		x = 0;
 		while (x < size)
@@ -78,7 +77,7 @@ void		ft_place(char **map, t_point pt[4], int tetri_nb, t_point ok)
 void		ft_delete(char **map, t_point pt[4], t_point ok)
 {
 	int		k;
-	
+
 	k = 0;
 	while (k < 4)
 	{
