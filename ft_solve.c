@@ -6,7 +6,7 @@
 /*   By: llacaze <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 11:09:03 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 19:23:43 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 20:54:24 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb, int nb_tet
 	r = -1;
 	while (r++ < (map_size - l_map[tetrimino[tetri_nb]].ordo_need))
 	{
+		write(1, "x", 1);
 		o = -1;
 		while (o++ <= (map_size - l_map[tetrimino[tetri_nb]].abcisse_need))
 		{

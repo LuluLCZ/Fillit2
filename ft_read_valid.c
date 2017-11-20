@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:18 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 18:24:32 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 21:01:31 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 //#include "../../Projets/Libft/ft_strlen.c"
 //#include "../../Projets/Libft/ft_strsub.c"
 //#include "Libft/ft_strnew.c"
-#include "Libft/libft.h"
+#include "includes/libft/libft.h"
 
 char		*ft_buf_to_str(int fd)
 {
@@ -26,22 +26,26 @@ char		*ft_buf_to_str(int fd)
 	if (!(reead = read(fd, str, SIZE_BUFF) >= 0))
 	{
 		free(str);
-		write(1, "Trop de tetri", 13);
-		exit(EXIT_FAILURE);
+		ft_error();
 	}
 	return (str);
 }
 
-int			ft_check_sharpoints(char *str)
+void		ft_check_sharpoints(char *str)
 {
 	size_t		n;
 	int		i;
 	int		count_sharp;
 	int		count_dots;
+	size_t	p;
 
+	p = ft_strlen(str);
+	write(1, "u", 1);
 	n = -1;
-	while (n++ < ft_strlen(str))
+	while (n++ < p)
 	{
+		printf("%zu", ft_strlen(str));
+		write(1, "l", 1);
 		i = -1;
 		count_sharp = 0;
 		count_dots = 0;
@@ -52,14 +56,14 @@ int			ft_check_sharpoints(char *str)
 			if (str[i + n] == '.')
 				count_dots++;
 		}
-		if (count_sharp != 4 || count_dots != 4)
-			return (FALSE);
+		printf("%d", count_sharp);
+		if (count_sharp != 4 || count_dots != 12)
+			ft_error();
 		i += 21;
 	}
-	return (TRUE);
 }
 
-int			ft_check_nl(char *str)
+void			ft_check_nl(char *str)
 {
 	int		i;
 	size_t		n;
@@ -71,38 +75,38 @@ int			ft_check_nl(char *str)
 		i = 0;
 		while (i <= 15)
 		{
+			write(1, "s", 1);
 			k = n + i;
 			if (!SHPT(str[k]) || !SHPT(str[k + 1]) || !SHPT(str[k + 2]) 
 								|| !SHPT(str[k + 3]) || !NL(str[k + 4]))
-				return (FALSE);
+				ft_error();
 			i += 5;
 		}
 		n += 21;
 	}
-	return (TRUE);
 }
 
-int			ft_check_all(char *str)
+void		ft_check_all(char *str)
 {
 	int		i;
 
 	i = 0;
 	if (str[ft_strlen(str) - 2] != '#' && str[ft_strlen(str) - 2] != '.')
-	{
-		write(1, "back de trop", 12);
-		exit(EXIT_FAILURE);
-	}
-	if (ft_check_sharpoints(str) == FALSE)
-		return (FALSE);
-	if (ft_check_nl(str) == FALSE)
-		return (FALSE);
-	while (str[i])
-	{
-		if (!SHPTNL(str[i]))
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
+		ft_error();
+	printf("%s", str);
+	ft_check_sharpoints(str);
+	write(1, "ld", 2);
+	ft_check_nl(str);
+	//while (str[i])
+	//{
+	//	write(1, "o", 1);
+	//	if (!SHPTNL(str[i]))
+	//	{
+	//		write(1, "p", 1);
+	//		ft_error();
+	//	}
+	//	i++;
+	//}
 }
 /*
 int		main(int ac, char **av)

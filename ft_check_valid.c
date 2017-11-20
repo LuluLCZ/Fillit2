@@ -6,21 +6,21 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 10:41:51 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/18 12:28:52 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 21:03:35 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
-#include "Libft/libft.h"
+#include "includes/libft/libft.h"
 
 int		ft_check_line(char *line)
 {
 	int		count;
 
 	count = 1;
-	while (*line)
+	while (*line++)
 	{
-		if (*line++ != '.')
+		if (*line != '.')
 			count = 0;
 	}
 	return (count);

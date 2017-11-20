@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:34 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 19:31:44 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 20:43:53 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
-# include "../../Projets/Libft/libft.h"
+# include "../Projets/Libft/libft.h"
 # include "string.h"
 
 # define S1 "#...#..##"
@@ -75,9 +75,9 @@ char		**ft_str_split_nl(char **tab);
 char		*ft_strstr(const char *haystack, const char *needle);
 void		ft_valid(int i, char valid[20][15]);
 int			ft_valid_tetri_check(char **tab, int nb_tetri);
-int			ft_check_sharpoints(char *str);
-int			ft_check_nl(char *str);
-int			ft_check_all(char *str);
+void		ft_check_sharpoints(char *str);
+void		ft_check_nl(char *str);
+void		ft_check_all(char *str);
 int			ft_check_line(char *line);
 int			ft_check_column(char **map);
 void		ft_move_up(char **map);
