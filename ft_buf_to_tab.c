@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 12:29:58 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/17 12:31:34 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/20 19:20:37 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ char		**ft_str_to_tab(char *str)
 	if (!(new_str = (char **)malloc(sizeof(sizeof(char *) * (ft_strlen(str) + 13)))))
 		return (NULL);
 	if (str[ft_strlen(str) - 2] != '#' && str[ft_strlen(str) - 2] != '.')
-	{
-		write(1, "back de trop", 12);
-		exit(EXIT_FAILURE);
-	}
+		ft_error();
 	while (str[i])
 	{
 	//	printf("%zu\n", i);

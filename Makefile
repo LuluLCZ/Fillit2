@@ -6,7 +6,7 @@
 #    By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 11:29:27 by llacaze           #+#    #+#              #
-#    Updated: 2017/11/18 13:30:12 by llacaze          ###   ########.fr        #
+#    Updated: 2017/11/20 19:45:12 by llacaze          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,22 +37,33 @@ SRC = ft_buf_to_tab.c		\
 	  ft_map.c				\
 	  ft_print_error.c		\
 	  ft_solve.c			\
-	  ft_coordonnees.c
+	  ft_coordonnees.c		\
+	  ft_print_map.c		\
+	  Libft/ft_putstr.c		\
+	  Libft/ft_putchar.c
 
+vpath %.c ./Libft/
+vpath %.o ./Libft/
 OBJ=$(SRC:.c=.o)
 
-
-
-$NAME: $(OBJ) Makefile
-	$(CC) $(CFLAGS) $(OPTIONS) $(SRC)
-	$(CC) -o $(NAME) $(OBJ)
+HEAD_DIR = ./Libft/
 
 all: $(NAME)
 
+$(NAME): $(OBJ) Makefile
+	$(CC) $(CFLAGS) $(OPTIONS) $(SRC)
+	$(CC) -o $(NAME) $(OBJ)
+
+
+
 clean:
 	$(RM) $(OBJ)
+	(cd $(HEAD_DIR) && $(MAKE) $@)
 
 fclean: clean
 	$(RM) $(NAME)
+	(cd $(HEAD_DIR) && $(MAKE) $@)
 
 re: fclean all
+
+.PHONY : all clean fclean re
