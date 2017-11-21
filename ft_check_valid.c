@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 10:41:51 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 21:03:35 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/21 10:22:44 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int		ft_check_line(char *line)
 	int		count;
 
 	count = 1;
-	while (*line++)
+	while (*line)
 	{
-		if (*line != '.')
+		if (*line++ != '.')
 			count = 0;
 	}
 	return (count);

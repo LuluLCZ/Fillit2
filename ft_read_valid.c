@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:18 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 21:01:31 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/21 10:23:36 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,9 @@ void		ft_check_sharpoints(char *str)
 	size_t	p;
 
 	p = ft_strlen(str);
-	write(1, "u", 1);
-	n = -1;
-	while (n++ < p)
+	n = 0;
+	while (n < ft_strlen(str))
 	{
-		printf("%zu", ft_strlen(str));
-		write(1, "l", 1);
 		i = -1;
 		count_sharp = 0;
 		count_dots = 0;
@@ -56,10 +53,9 @@ void		ft_check_sharpoints(char *str)
 			if (str[i + n] == '.')
 				count_dots++;
 		}
-		printf("%d", count_sharp);
 		if (count_sharp != 4 || count_dots != 12)
 			ft_error();
-		i += 21;
+		n += 21;
 	}
 }
 
@@ -75,7 +71,6 @@ void			ft_check_nl(char *str)
 		i = 0;
 		while (i <= 15)
 		{
-			write(1, "s", 1);
 			k = n + i;
 			if (!SHPT(str[k]) || !SHPT(str[k + 1]) || !SHPT(str[k + 2]) 
 								|| !SHPT(str[k + 3]) || !NL(str[k + 4]))
@@ -93,20 +88,16 @@ void		ft_check_all(char *str)
 	i = 0;
 	if (str[ft_strlen(str) - 2] != '#' && str[ft_strlen(str) - 2] != '.')
 		ft_error();
-	printf("%s", str);
 	ft_check_sharpoints(str);
-	write(1, "ld", 2);
 	ft_check_nl(str);
-	//while (str[i])
-	//{
-	//	write(1, "o", 1);
-	//	if (!SHPTNL(str[i]))
-	//	{
-	//		write(1, "p", 1);
-	//		ft_error();
-	//	}
-	//	i++;
-	//}
+	while (str[i])
+	{
+		if (!SHPTNL(str[i]))
+		{
+			ft_error();
+		}
+		i++;
+	}
 }
 /*
 int		main(int ac, char **av)

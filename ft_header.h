@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:34 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 20:43:53 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/21 11:18:39 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,14 @@ typedef struct			s_pattern
 	char		*pattern;
 }						t_pattern;
 
-char		*ft_buf_to_str(int fd);
-char		**ft_str_to_tab(char *str);
-char		**ft_str_split_nl(char **tab);
-char		*ft_strstr(const char *haystack, const char *needle);
-void		ft_valid(int i, char valid[20][15]);
-int			ft_valid_tetri_check(char **tab, int nb_tetri);
-void		ft_check_sharpoints(char *str);
-void		ft_check_nl(char *str);
+char					*ft_buf_to_str(int fd);
+char					**ft_str_to_tab(char *str);
+char					**ft_str_split_nl(char **tab);
+char					*ft_strstr(const char *haystack, const char *needle);
+void					ft_valid(int i, char valid[20][15]);
+int						ft_valid_tetri_check(char **tab, int nb_tetri);
+void					ft_check_sharpoints(char *str);
+void					ft_check_nl(char *str);
 void		ft_check_all(char *str);
 int			ft_check_line(char *line);
 int			ft_check_column(char **map);
@@ -93,13 +93,13 @@ void		ft_place(char **map, t_point pt[4], int tetri_nb, t_point ok);
 int			ft_check_available(char **map, t_point pt[4], int r, int o);
 char		**ft_test(int *tetrimino, int nb_tetri, int map_size);
 int			ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb,
-							int nb_tetri);
+			int nb_tetri);
 void		ft_delete(char **map, t_point pt[4], t_point ok);
 char		**ft_solve_end(int *tetrimino, int nb_tetri);
 void		ft_print_map(int *tetrimino, int nb_tetri);
 
-t_coord		l_coord[19];
-t_map		l_map[19];
-t_pattern	l_pattern[19];
+t_coord		g_coord[19];
+t_map		g_map[19];
+t_pattern	g_pattern[19];
 
 #endif

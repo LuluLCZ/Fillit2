@@ -6,7 +6,7 @@
 /*   By: llacaze <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 11:09:03 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 20:54:24 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/21 14:17:58 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,30 @@ int		ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb, int nb_tet
 	t_point	ok;
 	int		r;
 	int		o;
-
+	int		i;
+	
+	i = 0;
 	r = -1;
-	while (r++ < (map_size - l_map[tetrimino[tetri_nb]].ordo_need))
+	while (r++ < (map_size - g_map[tetrimino[tetri_nb]].ordo_need))
 	{
-		write(1, "x", 1);
 		o = -1;
-		while (o++ <= (map_size - l_map[tetrimino[tetri_nb]].abcisse_need))
+		while (o++ <= (map_size - g_map[tetrimino[tetri_nb]].abcisse_need))
 		{
-			if (ft_check_available(map, l_coord[tetrimino[tetri_nb]].coordonnees.point, r, o) == 4)
+			if (ft_check_available(map, g_coord[tetrimino[tetri_nb]].coordonnees.point, r, o) == 4)
 			{
 				ok.y = r;
 				ok.x = o;
-				ft_place(map, l_coord[tetrimino[tetri_nb]].coordonnees.point, tetri_nb, ok);
+				ft_place(map, g_coord[tetrimino[tetri_nb]].coordonnees.point, tetri_nb, ok);
+				while (i < map_size)
+				{
+					printf("%s", map[i]);
+					i++;
+				}
 				if (tetri_nb == nb_tetri - 1 || ft_solve(map, tetrimino, map_size, tetri_nb + 1, nb_tetri))
 					return (1);
 				else
 				{
-					ft_delete(map, l_coord[tetrimino[tetri_nb]].coordonnees.point, ok);
+					ft_delete(map, g_coord[tetrimino[tetri_nb]].coordonnees.point, ok);
 				}
 			}
 		}

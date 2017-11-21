@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 18:41:43 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 18:06:50 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/21 11:16:43 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int		ft_size_map(int nb_tetri, int *tetrimino)
 	int		map_size;
 
 	i = -1;
-	map_size = l_map[tetrimino[0]].map_need;
+	map_size = g_map[tetrimino[0]].map_need;
 	while (i++ < nb_tetri)
 	{
 		//ici on verfie quelle est la taille de map min pour le 
 		//plus grand tetrimino present qu on nous a donne.
-		if (l_map[tetrimino[i]].map_need > map_size)
-			map_size = l_map[tetrimino[i]].map_need;
+		if (g_map[tetrimino[i]].map_need > map_size)
+			map_size = g_map[tetrimino[i]].map_need;
 	}
 		//lorsque l on a plusieurs tetrimino il nous faut un plus grand carre
 		//donc on prend le nousmbre de tetriminos *4 (savoir le nombre de 
