@@ -6,7 +6,7 @@
 /*   By: llacaze <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 11:09:03 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 14:17:58 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/21 19:03:39 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ int		ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb, int nb_tet
 				ok.y = r;
 				ok.x = o;
 				ft_place(map, g_coord[tetrimino[tetri_nb]].coordonnees.point, tetri_nb, ok);
-				while (i < map_size)
-				{
-					printf("%s", map[i]);
-					i++;
-				}
+//				while (i < map_size)
+//				{
+//					printf("%s\n", map[i]);
+//					i++;
+//				}
 				if (tetri_nb == nb_tetri - 1 || ft_solve(map, tetrimino, map_size, tetri_nb + 1, nb_tetri))
 					return (1);
 				else

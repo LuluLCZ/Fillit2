@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 18:41:43 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 11:16:43 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/21 17:21:34 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int		ft_size_map(int nb_tetri, int *tetrimino)
 		//donc on prend le nousmbre de tetriminos *4 (savoir le nombre de 
 		//sharp qu il y aura, et on check si c'est plus grand que la map^2 
 		//puisque l on doit faire un carre on a un perimetre de x^2
-	while (nb_tetri * 4 > map_size * map_size)
+	while (nb_tetri * 4 >= map_size * map_size)
 		map_size++;
-	return (map_size);
+	return (map_size - 1);
 }
 
 char	**ft_generate_map(int size)
@@ -69,7 +69,7 @@ void		ft_place(char **map, t_point pt[4], int tetri_nb, t_point ok)
 	while (k < 4)
 	{
 		//write(1, "p", 1);
-		map[ok.y + pt[k].y][ok.x + pt[k].x] = 65 + tetri_nb;
+		map[ok.y + pt[k].y][ok.x + pt[k].x] = 'A' + tetri_nb;
 		k++;
 	}
 }
