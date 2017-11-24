@@ -6,11 +6,11 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:17:38 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 11:26:42 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:36:36 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 
 char		*ft_tab_to_blocks(char **map)
 {

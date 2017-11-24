@@ -6,11 +6,11 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:45:06 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 10:18:54 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/24 23:22:57 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 
 char	**ft_split(char *str)
 {
@@ -38,9 +38,9 @@ int		main(int ac, char **av)
 	free(str);
 	tetrimino = ft_tetriminos(ret, nb_tetri);
 	free(ret);
-	ret = ft_solve_end(tetrimino, nb_tetri);
+	//ret = ft_solve_end(tetrimino, nb_tetri);
 	ft_print_map(tetrimino, nb_tetri);
 	close (fd);
-	free(ret);
+	//free(ret);
 	return (0);
 }

@@ -6,13 +6,14 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 08:12:21 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/07 16:11:21 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:10:16 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {

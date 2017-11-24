@@ -6,11 +6,11 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 18:41:43 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 17:21:34 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:37:04 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 
 int		ft_size_map(int nb_tetri, int *tetrimino)
 {

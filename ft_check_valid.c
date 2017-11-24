@@ -6,11 +6,11 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 10:41:51 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 10:22:44 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:36:44 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 #include "includes/libft/libft.h"
 
 int		ft_check_line(char *line)

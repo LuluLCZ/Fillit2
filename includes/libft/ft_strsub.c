@@ -6,13 +6,14 @@
 /*   By: Lulu <Lulu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/06 00:30:45 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/07 16:12:55 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:13:48 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {

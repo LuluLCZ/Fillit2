@@ -6,15 +6,15 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:42:18 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 10:23:36 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:37:30 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 //#include "../../Projets/Libft/ft_strlen.c"
 //#include "../../Projets/Libft/ft_strsub.c"
 //#include "Libft/ft_strnew.c"
-#include "includes/libft/libft.h"
+//#include "../includes/libft/libft.h"
 
 char		*ft_buf_to_str(int fd)
 {

@@ -6,7 +6,7 @@
 #    By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/09 16:14:07 by llacaze           #+#    #+#              #
-#    Updated: 2017/11/20 20:02:42 by llacaze          ###   ########.fr        #
+#    Updated: 2017/11/23 13:14:31 by llacaze          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,18 +80,18 @@ SRC =   ft_atoi.c			\
 
 OBJ=$(SRC:.c=.o)
 
-$(NAME): Makefile $(OBJ)
-	$(CC) $(CFLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJ) Makefile
+	@$(CC) $(CFLAGS) -c $(SRC)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

@@ -6,12 +6,13 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 22:54:31 by Lulu              #+#    #+#             */
-/*   Updated: 2017/11/07 12:31:47 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:10:33 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {

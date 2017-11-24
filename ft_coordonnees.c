@@ -6,11 +6,11 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 11:54:54 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 11:41:55 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:36:50 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 
 t_coord					g_coord[19] = {
 	{{{{0, 0}, {0, 1}, {0, 2}, {1, 1}}}},

@@ -6,7 +6,7 @@
 #    By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 11:29:27 by llacaze           #+#    #+#              #
-#    Updated: 2017/11/20 20:14:40 by llacaze          ###   ########.fr        #
+#    Updated: 2017/11/23 13:42:19 by llacaze          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,18 +38,18 @@ HEAD_DIR = includes/libft/
 all: $(NAME)
 
 $(NAME): $(OBJ) Makefile
-	$(CC) $(CFLAGS) $(OPTIONS) $(SRC)
-	(cd $(HEAD_DIR) && $(MAKE) libft.a)
-	$(CC) $(OBJ) includes/libft/libft.a -o $(NAME)
+	@$(CC) $(CFLAGS) $(OPTIONS) $(SRC)
+	@(cd $(HEAD_DIR) && $(MAKE) libft.a)
+	@$(CC) $(OBJ) includes/libft/libft.a -o $(NAME)
 
 clean:
-	$(RM) $(OBJ)
-	(cd $(HEAD_DIR) && $(MAKE) $@)
+	@$(RM) $(OBJ)
+	@(cd $(HEAD_DIR) && $(MAKE) $@)
 
 fclean:
-	(cd $(HEAD_DIR) && $(MAKE) $@)
-	$(RM) $(OBJ)
-	$(RM) $(NAME)
+	@(cd $(HEAD_DIR) && $(MAKE) $@)
+	@$(RM) $(OBJ)
+	@$(RM) $(NAME)
 
 re: fclean all
 

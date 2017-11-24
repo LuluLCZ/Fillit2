@@ -6,7 +6,7 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/22 13:35:32 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/07 12:24:56 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:12:53 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {

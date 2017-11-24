@@ -6,11 +6,11 @@
 /*   By: llacaze <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 11:09:03 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/21 19:03:39 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 13:52:43 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 
 int		ft_check_available(char **map, t_point pt[4], int r, int o)
 {
@@ -30,19 +30,17 @@ int		ft_check_available(char **map, t_point pt[4], int r, int o)
 	return (0);
 }
 
-int		ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb, int nb_tetri)
+int		ft_solve(char **map, int *tetrimino, t_nb info, int tetri_nb)
 {
 	t_point	ok;
 	int		r;
 	int		o;
-	int		i;
-	
-	i = 0;
+
 	r = -1;
-	while (r++ < (map_size - g_map[tetrimino[tetri_nb]].ordo_need))
+	while (r++ < (info.map_size - g_map[tetrimino[tetri_nb]].ordo_need))
 	{
 		o = -1;
-		while (o++ <= (map_size - g_map[tetrimino[tetri_nb]].abcisse_need))
+		while (o++ <= (info.map_size - g_map[tetrimino[tetri_nb]].abcisse_need))
 		{
 			if (ft_check_available(map, g_coord[tetrimino[tetri_nb]].coordonnees.point, r, o) == 4)
 			{
@@ -54,7 +52,7 @@ int		ft_solve(char **map, int *tetrimino, int map_size, int tetri_nb, int nb_tet
 //					printf("%s\n", map[i]);
 //					i++;
 //				}
-				if (tetri_nb == nb_tetri - 1 || ft_solve(map, tetrimino, map_size, tetri_nb + 1, nb_tetri))
+				if (tetri_nb == info.nb_tetri - 1 || ft_solve(map, tetrimino, info, tetri_nb + 1))
 					return (1);
 				else
 				{
@@ -71,10 +69,14 @@ char	**ft_test(int *tetrimino, int nb_tetri, int map_size)
 	int		i;
 	int		k;
 	char	**map;
+	t_nb	info;
+
+	info.map_size = map_size;
+	info.nb_tetri = nb_tetri;
 	i = 0;
 	k = 0;
 	map = ft_generate_map(map_size);//{
-	if (ft_solve(map, tetrimino, map_size, 0, nb_tetri) == 1)
+	if (ft_solve(map, tetrimino, info, 0) == 1)
 		return (map);
 	else
 		return (ft_test(tetrimino, nb_tetri, map_size + 1));

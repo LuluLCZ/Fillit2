@@ -6,11 +6,11 @@
 /*   By: llacaze <llacaze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 12:29:58 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/20 19:20:37 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/23 14:58:16 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "includes/ft_header.h"
 
 char		**ft_str_to_tab(char *str)
 {
